@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <script src="https://kit.fontawesome.com/db192ad007.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="sass/fonts/font.css">
+    <title>Teste - Frontend - Webmotors</title>
+</head>
+<body>
+
+
+<!-- Content -->
+<main class="home">
+    <div class="container">
+
+        <section class="section-form">
+
+            
+            <div class="section-form__logo-top">
+                <a href="#">
+                    <img src="assets/img/webmotors.svg" alt="">
+                </a>
+            </div>
+
+            <div class="section-form__tabs">
+                <ul class="section-form__tabs__items">
+                    <li class="section-form__tabs__items__columnLeft">
+                        <div class="car">    
+                            <i class="fas fa-car fa-2x"></i>
+                        </div>
+
+                        <div class="block-title"> 
+                            <p>Comprar</p>
+                            <span>Carros</span>
+                        </div>
+                    </li>
+
+                    <li class="section-form__tabs__items__columnRight">
+                        <div class="motoca">    
+                            <i class="fas fa-motorcycle fa-2x"></i>
+                        </div>
+
+                        <div class="block-title"> 
+                            <p>Comprar</p>
+                            <span>Motos</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="section-form__tabs__btn-sale">
+                    <a href="#">Vender meu carro</a>
+                </div>
+            </div>
+
+            <div class="section-form__form">
+                <div class="container">
+
+                    <form action="#" id="form-main" class="section-form__form__form-main">
+
+                        <div class="container">
+                            <div class="grid-12 section-form__form__form-main__checkboxs">
+                                <div class="item">
+                                    <label for="novos">
+                                    <input type="checkbox" id="novos" checked="checked">
+                                    Novos
+                                    </label>
+                                </div>
+
+                                <div class="item">
+                                    <label for="novos">
+                                    <input type="checkbox" id="usados" checked="checked">
+                                    Usados
+                                    </label>
+                                </div>
+                                
+                                <!-- <div class="item">
+                                    <input type="checkbox" id="usados">
+                                    <label for="usados">Usados</label>
+                                </div>  -->
+                                <!-- <div class="item">
+                                    <div class="squaredThree">
+                                        <input type="checkbox" value="None" id="squaredThree" name="check" checked />
+                                        <label for="squaredThree">Usados</label>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        <div class="section-form__form__form-main__group">
+                            <div class="container">
+
+                                <div class="grid-6 localizacao">
+                                    <div class="localizacao__icon"></div>
+                                    <input type="text" placeholder="São Paulo - SP" class="localizacao__input">
+                                    
+                                    <div class="localizacao__km">
+                                        <select name="" id="">
+                                            <option value="1">Raio: 100km</option>
+                                            <option value="2">Raio: 200km</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                
+
+                                <div class="grid-3 marca">
+                                    <select id="marca">
+                                        <option selected disabled>Marca: Todas</option>
+                                    </select>
+                                </div>
+
+                                <div class="grid-3 modelo">
+                                    <select name="" id="modelo1">
+                                        <option selected disabled>Modelo: Todos</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="container rowBottom">
+
+                                <div class="grid-3 ano-desejado">
+                                    <select name="" id="anoDesejado">
+                                        <option selected disabled>Ano Desejado</option>
+                                    </select>
+                                </div>
+
+                                <div class="grid-3 faixa-preco">
+                                    <select name="" id="faixa-preco">
+                                        <option value="0">Faixa de Preço</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+
+                                <div class="grid-6 versao-modelo">
+                                    <select name="" id="versao-modelo">
+                                        <option value="1">Versão: Todas</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="section-form__form__form-main__widgets">
+                            <div class="container">
+                                <div class="grid-6 columnLeft">
+                                    <p>Busca Avançada</p>
+                                </div>
+
+                                <div class="grid-6 columnRight">
+                                    <a href="#" class="btn-clearFields">Limpar filtros</a>
+                                    <a href="#" class="btn-offer">ver ofertas</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main>
+<!-- end Content -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script>
+  var id = 1;
+
+    let settings = {
+    "url": `http://desafioonline.webmotors.com.br/api/OnlineChallenge/Make`,
+    "method": "GET",
+    "dataType": "XML",
+  }
+
+    let settings1 = {
+        "url": `http://desafioonline.webmotors.com.br/api/OnlineChallenge/Model?MakeID=${id}`,
+        "method": "GET",
+        "dataType": "XML",
+    }
+
+    let settings2 = {
+    "url": `http://desafioonline.webmotors.com.br/api/OnlineChallenge/Version?ModelID=${id}`,
+    "method": "GET",
+    "dataType": "XML",
+  }
+  
+$.ajax(settings).done(function (response) {
+    let div = document.querySelector('#form-main #marca');
+
+    for ( i = 0; i < 5; i++) {
+        let id = response.getElementsByTagName("ID")[i].textContent;
+        let name = response.getElementsByTagName("Name")[i].textContent;    
+
+        let newsHtml = `
+            <option value=${name}>${name}</option>
+        `
+        div.innerHTML += newsHtml;
+    }
+
+  });
+
+$.ajax(settings1).done(function (response) {
+    console.log(response);
+    let div = document.querySelector('#form-main #modelo1');
+
+    for ( i = 0; i < 5; i++) {
+        let id = response.getElementsByTagName("ID")[i].textContent;
+        let name = response.getElementsByTagName("Name")[i].textContent;
+
+        let newsHtml = `
+            <option value='${name}'>${name}</option>
+        `
+        div.innerHTML += newsHtml;
+    }
+
+});
+
+$.ajax(settings2).done(function (response) {
+    console.log(response);
+    let div = document.querySelector('#form-main #versao-modelo');
+
+    for ( i = 0; i < 5; i++) {
+        let id = response.getElementsByTagName("ID")[i].textContent;
+        let name = response.getElementsByTagName("Name")[i].textContent;
+
+        let newsHtml = `
+            <option value='${name}'>${name}</option>
+        `
+        div.innerHTML += newsHtml;
+    }
+
+});
+
+
+</script>
+
+</body>
+</html>

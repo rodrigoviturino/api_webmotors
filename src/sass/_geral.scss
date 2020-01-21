@@ -1,0 +1,30 @@
+/* STYLE GERAL */
+
+body {
+    position: relative;
+    @include type-1(18px);
+    display: flex ;
+    align-items: center ;
+    justify-content: center;
+    height: 100vh;
+
+    @include device(s){
+        text-align: center;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.ativo {
+    display: none !important;
+    transition: all 0.7s;
+}
+
+/* END STYLE GERAL */
+
+
+
+

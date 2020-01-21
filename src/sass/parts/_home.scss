@@ -1,0 +1,522 @@
+.home {
+
+    .section-form {
+        background-color: #f4f4f4;
+        padding: 10px 12px;
+        max-width: 933px;
+        max-height: 312px;
+        margin: 0 auto;
+
+        @include device(s){
+            max-width: unset;
+            max-height: unset;
+            
+        }
+
+
+        &__logo-top {
+            padding-bottom: 7px;
+
+            @include device(s){
+                padding: 30px 0;
+            }
+        }
+
+        &__tabs {
+            display: flex;
+            justify-content: space-between;
+
+            @include device(s){
+                flex-direction: column;
+            }
+
+            &__items {
+                display: flex;
+                @include device(s){
+                    order: 2;
+                }
+
+                &__columnLeft {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: solid 2px #F3123C;
+                    padding: 0 20px;
+                    cursor: pointer;
+
+                    @include device(s){
+                        padding-bottom: 7px;    
+                    }
+
+                    .car {
+                        color: #F3123C;
+                        margin-right: 10px;
+                    }
+
+                    .block-title {
+                        @include type-2(16);
+                        p {
+                            color: #9a9eb4;
+                            font-weight: 500;
+                            letter-spacing: 0.5px;
+                            text-transform: uppercase;
+                            @include type-2(12);
+
+                            @include device(s){
+                                font-size: 10px;
+                            }
+                        }
+                        span {
+                            color: #F3123C;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            @include type-2(20);
+                            @include device(s){
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                &__columnRight {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 50px;
+                    // border-bottom: solid 3px #F3123C;
+                    padding: 0 20px;
+                    cursor: pointer;
+
+                    @include device(s){
+                        padding: 0;
+                        padding-bottom: 7px;   
+                        margin: 0px; 
+                    }
+                    
+                    .motoca {
+                        color: #868697;
+                        margin-right: 10px;
+                    }
+
+                    .block-title {
+                        @include type-2(16);
+                        p {
+                            color: #9a9eb4;
+                            font-weight: 500;
+                            letter-spacing: 0.5px;
+                            text-transform: uppercase;
+                            @include type-2(12);
+
+                            @include device(s){
+                                font-size: 10px;    
+                            }
+                        }
+                        span {
+                            color: #8b8b96;
+                            font-weight: 500;
+                            text-transform: uppercase;
+                            letter-spacing: 0.5px;
+                            @include type-2(20);
+
+                                @include device(s){
+                                    font-size: 16px;   
+                                }
+                        }
+                    }
+                }
+
+            }
+
+            &__btn-sale {
+                @include device(s){
+                    order: 1;
+                    margin-bottom: 10px;
+                }
+
+                a {
+                    display: inline-block;
+                    background-color: transparent;
+                    border: solid 2px #f69d26;
+                    color: #f69d26;
+                    padding: 9px 23px;
+                    text-decoration: none;
+                    transition: all 0.5s;
+                    font-weight: 500;
+                    border-radius: 4px;
+                    margin-bottom: 15px;
+                    @include type-2(16);
+
+                    &:hover {
+                        transition: all 0.7s;
+                        background-color: #f69d26;
+                        color: #fff;
+                    }
+                }
+            }
+
+        }
+
+        // Formulario 
+        &__form {
+            padding:15px 40px;
+            background-color: #fff;
+
+            @include device(s){
+                padding: 15px 0;                   
+            }
+
+            &__form-main {
+
+                &__checkboxs {
+                   display: flex;
+                   margin-bottom: 15px;
+
+                   .item {
+                        margin-right: 50px;
+                        display: flex;
+                        position: relative;    
+                        
+                        @include device(s){
+                            margin-right: 35px;
+                        }
+                    
+                        .squaredThree {
+                            
+                            label {
+                                width: 20px;
+                                height: 20px;
+                                cursor: pointer;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background-color: #fff;
+                                border: solid 1px #9a9eb4;
+                                box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+                                &:after {
+                                  content: '';
+                                  width: 9px;
+                                  height: 5px;
+                                  position: absolute;
+                                  top: 4px;
+                                  left: 4px;
+                                  border: 3px solid #F3123C;
+                                  border-top: none;
+                                  border-right: none;
+                                  background: transparent;
+                                  opacity: 0;
+                                  transform: rotate(-45deg);
+                                }
+                                &:hover::after {
+                                  opacity: 0.3;
+                                }
+                              }
+                              input[type=checkbox] {
+                                visibility: hidden;
+                                &:checked + label:after {
+                                  opacity: 1;
+                                }    
+                              }
+                           
+                        }
+                   }
+                }
+
+                &__group {
+
+                    .localizacao {
+                        position: relative;
+                        display: flex;
+                        // margin: 0 0 15px;
+                        margin-bottom: 15px;
+
+                        input {
+                            width: 100%;
+                            background-color: transparent;
+                            border: none;
+                            padding: 8px;
+                            border-top-left-radius: 3px;
+                            border-bottom-left-radius: 3px;
+                            border-left:solid 1px #b5b5bf;
+                            border-top: solid 1px #b5b5bf;
+                            border-bottom: solid 1px #b5b5bf;
+                            border-right: solid 1px #b5b5bf;
+
+                            &:focus {
+                                border: solid 2px #4d4d4d;
+                                outline: 0;
+                                -webkit-box-shadow: none !important;
+                                box-shadow: none !important;
+                            }
+                        }
+
+                        select {
+                            padding: 8px;
+                            border-top-right-radius: 3px;
+                            border-bottom-right-radius: 3px;
+                            border-left: none;
+                            color: #808080;
+
+                            &:focus {
+                                border: solid 2px #4d4d4d;
+                                outline: 0;
+                                -webkit-box-shadow: none !important;
+                                box-shadow: none !important;
+                            }
+                            
+                        }
+
+                        &__icon {
+
+                        }
+
+                        &__km {
+                            // position: absolute;
+                        }
+                    }
+
+                    .marca {
+
+                        @include device(s){
+                            margin-bottom: 15px;
+                        }
+
+                        select {
+                            padding: 8px;
+                            width: 100%;
+                            border-radius: 4px;
+                            color: #808080;
+
+                            &:focus {
+                                border: solid 2px #4d4d4d;
+                                outline: 0;
+                                -webkit-box-shadow: none !important;
+                                box-shadow: none !important;
+                            }
+
+                            option {
+                                color: #808080;
+                                
+                                span {
+                                    font-weight: bold;
+
+                                    &:nth-child(2){
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    .modelo {
+
+                        @include device(s){
+                            margin-bottom: 15px;
+                        }
+
+                        select {
+                            padding: 8px;
+                            width: 100%;
+                            border-radius: 4px;
+                            color: #808080;
+
+                            &:focus {
+                                border: solid 2px #4d4d4d;
+                                outline: 0;
+                                -webkit-box-shadow: none !important;
+                                box-shadow: none !important;
+                            }
+                        }
+                    }
+
+                    .rowBottom {
+
+                        .ano-desejado {
+                            // margin-left: 0;
+                            @include device(s){
+                                margin-bottom: 15px;
+                            }
+
+                            select {
+                                width: 100%;
+                                padding: 8px;
+                                color: #808080;
+                                border-radius: 4px;
+                                border-top-left-radius: 3px;
+                                border-bottom-left-radius: 3px;
+                                border-left:solid 1px #b5b5bf;
+                                border-top: solid 1px #b5b5bf;
+                                border-bottom: solid 1px #b5b5bf;
+                                border-right: solid 1px #b5b5bf;
+
+                                &:focus {
+                                    border: solid 2px #4d4d4d;
+                                    outline: 0;
+                                    -webkit-box-shadow: none !important;
+                                    box-shadow: none !important;
+                                }
+                            }
+                        }
+
+                        .faixa-preco {
+                            @include device(s){
+                                margin-bottom: 15px;
+                            }
+                            select {
+                                width: 100%;
+                                padding: 8px;
+                                color: #808080;
+                                border-radius: 4px;
+                                border-top-left-radius: 3px;
+                                border-bottom-left-radius: 3px;
+                                border-left:solid 1px #b5b5bf;
+                                border-top: solid 1px #b5b5bf;
+                                border-bottom: solid 1px #b5b5bf;
+                                border-right: solid 1px #b5b5bf;
+
+                                &:focus {
+                                    border: solid 2px #4d4d4d;
+                                    outline: 0;
+                                    -webkit-box-shadow: none !important;
+                                    box-shadow: none !important;
+                                }
+                            }
+                        }
+
+                        .versao-modelo {
+                            select {
+                                width: 100%;
+                                padding: 8px;
+                                color: #808080;
+                                border-radius: 4px;
+                                border-top-left-radius: 3px;
+                                border-bottom-left-radius: 3px;
+                                border-left:solid 1px #b5b5bf;
+                                border-top: solid 1px #b5b5bf;
+                                border-bottom: solid 1px #b5b5bf;
+                                border-right: solid 1px #b5b5bf;
+
+                                &:focus {
+                                    border: solid 2px #4d4d4d;
+                                    outline: 0;
+                                    -webkit-box-shadow: none !important;
+                                    box-shadow: none !important;
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                &__widgets {
+                    margin-top: 15px;
+                    .container {
+                        display: flex;
+                        align-items: center;
+
+                        @include device(s){
+                            flex-direction: column;
+                        }
+
+                        .columnLeft {
+                            
+                            p {
+                                color: #F3123C;
+                                font-weight: bold;
+                                position: relative;
+                                @include type-2(14);
+
+                                &:before {
+                                    content: '';
+                                    display: inline-block;
+                                    background-color: transparent;
+                                    border: solid 2px #F3123C;
+                                    border-left: none;
+                                    border-top: none;
+                                    transform: rotate(-45deg);
+                                    height: 6px;
+                                    width: 6px;
+                                    position: relative;
+                                    top: -2px;
+                                    margin-right: 5px;
+
+                                }
+
+                                @include device(s){
+                                    margin-bottom: 20px;
+                                }
+
+
+                            }    
+                        }
+                        .columnRight {
+                            display: flex;
+                            align-items: center;
+
+                            @include device(s){
+                                justify-content: space-around;
+                            }
+
+                            .btn-clearFields {
+                                display: block;
+                                text-decoration: none;
+                                color: #9a9eb4;
+                                font-weight: 400;
+                                margin-right: 15px;
+                                @include type-2(14);   
+                                
+                                &:hover {
+                                    color: #6a6a6b;
+                                }
+
+                                @include device(s){
+                                    width: 60%;
+                                    @include type-2(14);
+                                }
+                            }
+
+                            .btn-offer {
+                                display: block;
+                                text-decoration: none;
+                                color: #fff;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                text-align: center;
+                                border-radius: 3px;
+                                padding: 10px 50px;
+                                width: 72%;
+                                border: solid 1px #fff;
+                                background-color: #F3123C;
+                                transition: all 0.9s;
+                                @include type-2(1);
+
+                                &:hover {
+                                    transition: all 0.7s;
+                                    background-color: #fff;
+                                    color: #F3123C;
+                                    border: solid 1px #F3123C;
+                                }
+
+                                @include device(s){
+                                    width: 70%;
+                                    padding: 10px 30px;
+                                    @include type-2(12);
+                                }
+
+
+                            }
+
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+
+    }
+
+}
